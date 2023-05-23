@@ -10,7 +10,7 @@ if($_GET["API_KEY"]=="Flight booker 1.2 plus edition"){
     }
 }
 else{
-    echo "wrong Key";
+    echo "aawrong Key";
 
 }
 
