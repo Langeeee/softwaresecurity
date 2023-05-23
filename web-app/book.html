@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> FlyBook :: Book</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+          integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/book.css">
+</head>
+
+<body>
+
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+    <h5 class="my-0 mr-md-auto font-weight-normal"><i class="fas fa-plane "></i>&nbsp;&nbsp;&nbsp; FlyBook</h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="#">Features</a>
+        <a class="p-2 text-dark" href="#">Enterprise</a>
+        <a class="p-2 text-dark" href="#">Support</a>
+        <a class="p-2 text-dark" href="#">Pricing</a>
+    </nav>
+    <a class="btn btn-outline-primary" href="#">Sign up</a>
+</div>
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">FlyBook</h1>
+    <p class="lead">Book you next flight in less then one minute. Just type the info bellow and your flight will be
+        booked.</p>
+</div>
+
+
+<div class="container">
+    <div class="card-deck mb-3 text-center">
+        <div class="card mb-4 box-shadow">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">From <i class="fas fa-plane "></i></h4>
+            </div>
+            <div class="card-body">
+                <form autocomplete="off" action="/action_page.php">
+                    <div class="autocomplete" style="width:300px;">
+                        <input type="text" id="input-from" name="input-from" placeholder="Type min 2 charactes">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-4 box-shadow">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">Destination <i class="fas fa-plane fa-rotate-180"></i></h4>
+            </div>
+            <div class="card-body">
+                <form autocomplete="off">
+                    <div class="autocomplete" style="width:300px;">
+                        <input type="text" id="input-to" name="input-to" placeholder="Type min 2 charactes">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-4 box-shadow">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">When <i class="fas fa-calendar"></i></h4>
+            </div>
+            <div class="card-body">
+                <input type="date" id="date" name="date" class="form-control" value="2018-05-01">
+            </div>
+        </div>
+    </div>
+
+    <div class="card-deck mb-3 text-center">
+        <div class="card mb-4 box-shadow">
+            <div class="card-body">
+                <button class="btn btn-lg btn-primary btn-block" type="button" id="findFlights">Find</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-deck mb-3 text-center">
+        <div class="card mb-4 box-shadow">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">Flights <i class="fas fa-plane "></i></h4>
+            </div>
+            <div class="card-body">
+                <!--<input type="text" id="input-from" name="input-from" class="form-control" placeholder="Type min 2 charactes">-->
+
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">Flight number</th>
+                        <th scope="col">From</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">Departure time</th>
+                        <th scope="col">ETA</th>
+                        <th scope="col">Gate</th>
+                        <th scope="col">&nbsp;</th>
+                    </tr>
+                    </thead>
+                    <tbody id="flightsTblBody">
+                    <tr>
+                        <th scope="row" colspan="6">No Flights. Type date in the input fields.</th>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <!--<footer class="pt-4 my-md-5 pt-md-5 border-top">-->
+    <!--<div class="row">-->
+    <!--<div class="col-12 col-md">-->
+    <!--<i class="fas fa-plane "></i> FlyBook-->
+    <!--<small class="d-block mb-3 text-muted">© 2017-2018</small>-->
+    <!--</div>-->
+    <!--<div class="col-6 col-md">-->
+    <!--<h5>Features</h5>-->
+    <!--<ul class="list-unstyled text-small">-->
+    <!--<li><a class="text-muted" href="#">Cool stuff</a></li>-->
+    <!--<li><a class="text-muted" href="#">Random feature</a></li>-->
+    <!--<li><a class="text-muted" href="#">Team feature</a></li>-->
+    <!--<li><a class="text-muted" href="#">Stuff for developers</a></li>-->
+    <!--<li><a class="text-muted" href="#">Another one</a></li>-->
+    <!--<li><a class="text-muted" href="#">Last time</a></li>-->
+    <!--</ul>-->
+    <!--</div>-->
+    <!--<div class="col-6 col-md">-->
+    <!--<h5>Resources</h5>-->
+    <!--<ul class="list-unstyled text-small">-->
+    <!--<li><a class="text-muted" href="#">Resource</a></li>-->
+    <!--<li><a class="text-muted" href="#">Resource name</a></li>-->
+    <!--<li><a class="text-muted" href="#">Another resource</a></li>-->
+    <!--<li><a class="text-muted" href="#">Final resource</a></li>-->
+    <!--</ul>-->
+    <!--</div>-->
+    <!--<div class="col-6 col-md">-->
+    <!--<h5>About</h5>-->
+    <!--<ul class="list-unstyled text-small">-->
+    <!--<li><a class="text-muted" href="#">Team</a></li>-->
+    <!--<li><a class="text-muted" href="#">Locations</a></li>-->
+    <!--<li><a class="text-muted" href="#">Privacy</a></li>-->
+    <!--<li><a class="text-muted" href="#">Terms</a></li>-->
+    <!--</ul>-->
+
+    <!--</div>-->
+    <!--</div>-->
+    <!--</footer>-->
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+<script src="vendor/autocomp.js"></script>
+<script src="js/util.js"></script>
+
+<script>
+    var allAirports = ['No data'];
+
+    changeBackground();
+    getAllAirports();
+
+
+    function getAllAirports() {
+        if (localStorage.getItem('airports') === null) {
+            $.ajax({
+                url: URL + '&action=get' +
+                '&items=airport' +
+                '&search=',
+                method: 'GET',
+                dataType: 'json',
+                success: function (res) {
+                    var respStatus = res.shift();
+                    if (respStatus.status == 200) {
+                        var airports = [];
+                        for (var i = 0; i < res.length; i++) {
+                            var airport = res[i].airport + " " + res[i].code + ', ' + res[i].id;
+                            airports.push(airport);
+                        }
+                        localStorage.setItem('airports', JSON.stringify(airports));
+
+                        allAirports = airports;
+
+                        autocomplete(document.getElementById("input-from"), allAirports);
+                        autocomplete(document.getElementById("input-to"), allAirports);
+
+                    }
+                }
+            });
+
+        } else {
+            allAirports = JSON.parse(localStorage.getItem('airports'));
+
+            autocomplete(document.getElementById("input-from"), allAirports);
+            autocomplete(document.getElementById("input-to"), allAirports);
+        }
+
+    }
+
+    $('#findFlights').on('click', function () {
+        console.log("[LOG - book.html:239] " + 'find pressed');
+        findFlights();
+    });
+
+    function findFlights() {
+        var airpotFromString = $('#input-from').val();
+        var airpotToString = $('#input-to').val();
+
+        var aiportFromId = airpotFromString.split(',')[2];
+        var aiportToId = airpotToString.split(',')[2];
+
+        var fromCode = airpotFromString.split(',')[0];
+        var toCode = airpotToString.split(',')[0];
+
+        var date = $('#date').val();
+
+        $.ajax({
+            url: URL + '&action=get' +
+            '&items=flights' +
+            '&date=' + date +
+            '&from=' + aiportFromId +
+            '&to=' + aiportToId,
+            method: 'GET',
+            dataType: 'json',
+            success: function (res) {
+                var respStatus = res.shift();
+                if (respStatus.status == 200) {
+                    var flights = res;
+                    populateFlights(flights, fromCode, toCode);
+                }
+            }
+        });
+    }
+
+    function populateFlights(flights, from, to) {
+        $('#flightsTblBody').empty();
+        var row = "";
+        for (var i = 0; i < flights.length; i++) {
+            row +=
+                '<tr>' +
+                '<th scope="row">' + flights[i].number + '</th>' +
+                '<td>' + from + '</td>' +
+                '<td>' + to + '</td>' +
+                '<td>' + flights[i].date_time_depart + '</td>' +
+                '<td>' + flights[i].date_time_arriv + '</td>' +
+                '<td>' + flights[i].gate + '</td>' +
+                '<td><button class="bookBtn" type="button" data-id="' + flights[i].id + '">Book</button></td>' +
+                '</tr>';
+            $('#flightsTblBody').append(row);
+        }
+    }
+
+    $(document).on('click', '.bookBtn', function () {
+
+        if (localStorage.getItem('user') === null) {
+            alert('You need to login');
+            window.location.replace("index.html");
+            return;
+        }
+
+        var user = JSON.parse(localStorage.getItem('user'));
+        var userId = user.id;
+        var userToken = user.token;
+        var flightId = $(this).attr('data-id');
+        console.log("[LOG - book.html:284] " + flightId);
+
+
+        $.ajax({
+            url: URL + '&action=book' +
+            '&passenger=' + userId +
+            '&token=' + userToken +
+            '&flight=' + flightId,
+            method: 'GET',
+            dataType: 'json',
+            success: function (res) {
+                alert(res[0].statusDescription);
+                window.location.replace("book.html");
+            }
+        });
+
+    })
+
+
+    function changeBackground() {
+        var randomBg = 1 + Math.floor(Math.random() * 4);
+        $('body').css('background-image', 'url("img/' + randomBg + '.jpg")');
+    }
+
+
+</script>
+
+
+</body>
+
+
+</html>

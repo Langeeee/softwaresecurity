@@ -1,0 +1,30 @@
+version: '3'
+networks:
+  localnetwork:
+services:
+  db:
+    image: "mysql:8.0"
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=12345678
+      - MYSQL_DATABASE=flybook
+      - MYSQL_ROOT_USER=root
+      - MYSQL_PASSWORD=12345678
+    ports:
+      - 3307:3306
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d
+    networks:
+      - localnetwork
+  web:
+    build: .
+    environment: 
+      - DB_SERVER=db
+      - DB_USER=root
+      - DB_PASSWORD=12345678
+      - DB_NAME=flybook
+    ports:
+      - "8000:80"
+    networks:
+      - localnetwork

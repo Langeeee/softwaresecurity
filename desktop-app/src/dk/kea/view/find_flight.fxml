@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.kea.FindFlightController">
+    <children>
+        <MenuBar VBox.vgrow="NEVER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="New" />
+                        <MenuItem mnemonicParsing="false" text="Open…" />
+                        <Menu mnemonicParsing="false" text="Open Recent" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                        <MenuItem mnemonicParsing="false" text="Save" />
+                        <MenuItem mnemonicParsing="false" text="Save As…" />
+                        <MenuItem mnemonicParsing="false" text="Revert" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Preferences…" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Quit" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Undo" />
+                        <MenuItem mnemonicParsing="false" text="Redo" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Cut" />
+                        <MenuItem mnemonicParsing="false" text="Copy" />
+                        <MenuItem mnemonicParsing="false" text="Paste" />
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Select All" />
+                        <MenuItem mnemonicParsing="false" text="Unselect All" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+            <children>
+            <GridPane hgap="5.0" prefHeight="98.0" prefWidth="640.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="217.0" minWidth="10.0" prefWidth="205.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="304.0" minWidth="10.0" prefWidth="225.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="210.0" minWidth="10.0" prefWidth="198.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextField fx:id="inputFrom" onKeyReleased="#findFrom" promptText="From. Type airport" />
+                  <TextField fx:id="inputTo" onKeyReleased="#findTo" promptText="To. Type Airport" GridPane.columnIndex="1" />
+                  <DatePicker fx:id="inputDate" promptText="Pick a date" GridPane.columnIndex="2" />
+                  <Button mnemonicParsing="false" onAction="#findFlights" text="Find" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+            <ScrollPane layoutY="98.0" prefViewportHeight="200.0" prefViewportWidth="643.0">
+               <content>
+                  <VBox fx:id="vBoxFlights" prefHeight="189.0" prefWidth="643.0">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="No Flights found" textFill="#bcb5b5">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+            <Button layoutX="301.0" layoutY="317.0" mnemonicParsing="false" onAction="#bookFlight" text="Book" />
+            <ToolBar layoutY="353.0" prefHeight="25.0" prefWidth="666.0" AnchorPane.bottomAnchor="0.0">
+               <items>
+                  <Label fx:id="labelStatus" text="Status: " textFill="#d0a3a3" />
+               </items>
+            </ToolBar>
+            </children>
+        </AnchorPane>
+    </children>
+    <stylesheets>
+        <URL value="@find_flight.css" />
+    </stylesheets>
+</VBox>

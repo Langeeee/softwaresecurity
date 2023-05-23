@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8"
+          fx:controller="dk.kea.LoginController">
+    <columnConstraints>
+        <ColumnConstraints minWidth="10.0" prefWidth="100.0"/>
+        <ColumnConstraints/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints/>
+        <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+        <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+    </rowConstraints>
+    <children>
+        <Label contentDisplay="RIGHT" text="email"/>
+        <TextField fx:id="inputEmail" promptText="Type here the email to login" text="alice@its.dk" GridPane.columnIndex="1"/>
+        <Label contentDisplay="RIGHT" text="password" GridPane.rowIndex="1"/>
+        <PasswordField fx:id="inputPass" promptText="Type here the password to login" text="alice-1234"
+                       GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <Button mnemonicParsing="false" onAction="#loginBtn" text="Login" GridPane.rowIndex="2"/>
+    </children>
+</GridPane>
